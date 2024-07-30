@@ -1,0 +1,44 @@
+<config>
+<!-- general descriptions -->
+ <gen> 
+   <beg> 2019-11-03 00:00:00 </beg> <!-- beg time -->
+   <end> 2019-11-03 23:55:30 </end> <!-- end time -->
+   <sys> GAL </sys>                 <!-- GNSS system: GPS/GLO/BDS/GAL -->
+   <rec> ABMF </rec>                <!-- processing sites -->
+   <int> 30 </int>                  <!-- sampling interval -->
+   <sat_rm>  </sat_rm>              <!-- exclude certain satellites during UPD estimation --> 
+ </gen>
+
+<!-- input descriptions -->
+ <inputs> 
+   <ambupd> ABMF_ambupd_2019307 </ambupd> <!-- ambupd decoder: provide float IF and widelane ambiguities --> 
+   <rinexn> brdm3070.19p </rinexn>        <!-- nav RINEX decoder -->              
+   <upd> upd_wl_2019307_E </upd>          <!-- upd decoder: provide widelane upd -->                       
+ </inputs>                                                    
+
+<!-- mode of UPD estimation: WL(widelane)/EWL(extra-widelane)/NL(narrowlane)/EWL_epoch -->
+<process updmode="NL" /> 
+
+<gps> 
+  <band> 1 2 5 </band>   
+</gps>
+
+<gal> 
+  <band> 1 5 7 </band>   
+</gal>
+
+<bds> 
+  <band> 2 7 6 </band>   
+</bds>
+
+<glo> 
+  <band> 1 2 </band>   
+</glo>
+
+<!-- output descriptions  -->
+ <outputs append="false" verb="2"> 
+   <log> LOGRT.log </log>          <!-- log encoder -->
+   <upd> upd_nl_2019307_E </upd>   <!-- upd encoder -->
+ </outputs>
+
+</config>

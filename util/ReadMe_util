@@ -1,0 +1,48 @@
+---------------------------------------------------------------------------------------------
+
+              GREAT-UPD: An Open-source Software for GNSS UPD Estimation
+
+---------------------------------------------------------------------------------------------
+
+BATCH_PROCESS
+
+  Batch processing python scripts [Download GNSS Data, Cycle slip Detection, UPD Estimation]
+  
+---------------------------------------------------------------------------------------------
+
+PreEdit
+
+  Windows: 
+      The executable binary CUI AP (application program) included in the package requires Microsoft 
+      Windows environment. The executable binary AP in the package was built by VS (Microsoft Visual
+      Studio) 2017 on Windows 10. All of the necessary dynamic link libraries of the VS runtime 
+      library are involved in the folder. Note that the binaray executable program is 64-bit.
+      
+  Linux:
+      The CUI AP for Linux was built and tested on CentOS Linux release 7.7.1908 and x64 CPU.
+
+  Macintosh:
+      The CUI AP for Macintosh was built and tested on MacOS 10.15.3, in which kernel version is Darwin 19.3.0.
+
+  1. directory and file structure
+
+     ./Linux                CUI AP for Linux *
+     ./Windows              CUI AP for Windows *
+	 ./Macintosh            CUI AP for Macintosh *
+	 ./PreEdit_config      Sample XML files for GREAT-PreEdit *
+	 ./PreEdit_sample      Sample data for GREAT-PreEdit AP *
+
+  2. To run PreEdit, please type the command line
+     "<install_dir>/GREAT-UPD_<ver>/util/PreEdit/<platform>/GREAT-PreEdit -x CONFIG.xml"
+     at the terminal using the binaray executable AP of the correponding operating system (OS).
+
+  3. For more command line information, please type 
+     "<install_dir>/GREAT-UPD_<ver>/util/PreEdit/<platform>/GREAT-PreEdit --help" 
+
+---------------------------------------------------------------------------------------------
+
+UPD_ANALYSIS
+
+  Plotting and analysis scripts of UPD
+
+---------------------------------------------------------------------------------------------

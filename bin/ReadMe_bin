@@ -1,0 +1,38 @@
+---------------------------------------------------------------------------------------------
+
+              GREAT-UPD: An Open-source Software for GNSS UPD Estimation
+
+---------------------------------------------------------------------------------------------
+
+COMPILER ENVIRONMENT
+  
+  Windows: 
+      The executable CUI AP (application program) included in the package requires Microsoft 
+      Windows environment. The executable binary AP in the package was built by VS (Microsoft 
+      Visual Studio) 2017 on Windows 10 (64bit). All of the necessary dynamic link libraries 
+      are involved in the folder.
+      
+  Linux:
+      The CUI AP and shared libraries for Linux were built and tested on CentOS Linux release 
+      7.7.1908 and x64 CPU.
+
+  Macintosh:
+      The CUI AP and dynamic libraries for Macintosh were built and tested by AppleClang 
+      11.0.3.11030032 on MacOS 10.15.3, in which kernel version is Darwin 19.3.0.
+
+---------------------------------------------------------------------------------------------
+
+USAGE
+
+ 1. To run GREAT-UPD, please type the command line 
+    "<install_dir>/GREAT-UPD_<ver>/bin/<platform>/GREAT-UPD -x CONFIG.xml" 
+    at the terminal using the binaray executable AP of the correponding operating system (OS).
+
+ 2. For more command line information, please type 
+    "<install_dir>/GREAT-UPD_<ver>/bin/<platform>/GREAT-UPD --help" 
+ 
+ 3. NOTE: For the Linux operating system, before you run the executable AP, please enter 
+    "export LD_LIBRARY_PATH=<install_dir>/GREAT-UPD_<ver>/bin/Linux" to load the relavant shared
+    libraries in the current terminal
+
+---------------------------------------------------------------------------------------------

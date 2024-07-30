@@ -1,0 +1,47 @@
+<config>
+<!-- general descriptions -->
+ <gen> 
+   <beg> 2017-01-01 01:00:00 </beg> <!-- beg time -->
+   <end> 2017-01-01 23:55:00 </end> <!-- end time -->
+   <sys> GPS </sys>                 <!-- GNSS system: GPS/GLO/BDS/GAL -->
+   <rec> AUCK </rec>                <!-- processing sites -->
+   <int> 30 </int>                  <!-- sampling interval -->
+   <sat_rm>  </sat_rm>              <!-- exclude certain satellites during UPD estimation -->
+ </gen>
+ 
+<!-- input descriptions -->
+ <inputs> 
+   <rinexo> auck0010.17o </rinexo>              <!-- obs RINEX decoder --> 
+   <rinexn> brdm0010.17p </rinexn>              <!-- nav RINEX decoder -->
+   <ambflag> auck0010.17o.ambflag </ambflag>    <!-- ambflag decoder: cycle slip [GPS:L2/L5,GAL:E5a/E5b,BDS:B2/B3 -->
+   <biabern> P1C11701.DCB P1P21701.DCB P2C21701_RINEX.DCB </biabern> <!-- code bias decoder -->
+   <ifcb> ifcb_2017001 </ifcb>                  <!-- optional: ifcb decoder -->
+ </inputs>
+
+<!-- mode of UPD estimation: WL(widelane)/EWL(extra-widelae)/NL(narrowlane)/EWL_epoch -->
+<!-- choose whether to correct BDS satellite-induced code bias -->
+<process updmode="EWL" bds_code_bias_corr="true"/>  <!-- "EWL" for EWL UPD estimation, "EWL_epoch" for epoch-wisely EWL UPD estimation -->
+                 
+<gps> 
+  <band> 1 2 5 </band>   
+</gps>
+
+<gal> 
+  <band> 1 5 7 </band>   
+</gal>
+
+<bds> 
+  <band> 2 7 6 </band>   
+</bds>
+
+<glo> 
+  <band> 1 2 </band>   
+</glo>
+
+<!-- output descriptions  -->
+ <outputs append="false" verb="2"> 
+   <log> LOGRT.log </log>          <!-- log encoder -->
+   <upd> upd_ewl_2017001_G </upd>  <!-- upd encoder -->
+ </outputs>
+ 
+</config>

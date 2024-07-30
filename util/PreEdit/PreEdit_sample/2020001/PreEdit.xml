@@ -1,0 +1,70 @@
+<config>
+
+ <gen> 
+   <beg> 2020-01-01 00:00:00 </beg> 
+   <end> 2020-01-01 23:55:00 </end> 
+   <sys> GPS GLO GAL BDS </sys>     
+   <rec> AREG  AREQ </rec>                
+   <int> 30 </int>                  
+ </gen> 
+ 
+
+ <inputs> 
+   <rinexo> C:\Users\27878\Desktop\GREAT-UPD_1.0\util\PreEdit\PreEdit_sample\2020\001\areg0010.20o  C:\Users\27878\Desktop\GREAT-UPD_1.0\util\PreEdit\PreEdit_sample\2020\001\areq0010.20o </rinexo>  
+   <rinexn> C:\Users\27878\Desktop\GREAT-UPD_1.0\util\PreEdit\PreEdit_sample\2020\001\brdm0010.20p </rinexn>  
+ </inputs>
+ 
+
+<gps> 
+  <sat> 
+    G01  G02  G03  G04  G05  G06  G07  G08  G09  G10  G11  G12  G13  G14
+    G15  G16  G17  G18  G19  G20  G21  G22  G23  G24  G25  G26  G27  G28
+    G29  G30  G31  G32
+  </sat>
+  <band> 1 2 </band>   
+</gps>
+
+<gal> 
+  <sat> 
+    E01  E02  E03  E04  E05  E06  E07  E08  E09  E10  E11  E12  E13  E14
+    E15  E16  E17  E18  E19  E20  E21  E22  E23  E24  E25  E26  E27  E28
+    E29  E30  E31  E32  E33  E34  E35  E36
+  </sat>
+  <band> 1 5 </band>   
+</gal>
+
+<bds> 
+  <sat> 
+    C01  C02  C03  C04  C05  C06  C07  C08  C09  C10  C11  C12  C13  C14
+    C16
+  </sat>
+  <band> 2 7 </band>   
+</bds>
+
+<glo> 
+  <sat> 
+    R01  R02  R03  R04  R05  R06  R07  R08  R09  R10  R11  R12  R13  R14
+    R15  R16  R17  R18  R19  R20  R21  R22  R23  R24
+  </sat>
+  <band> 1 2 </band>   
+</glo>
+
+<process minimum_elev="7" />  
+
+
+<turboedit>
+ <ephemeris valid="true" />                                             
+ <check_pc pc_limit="250" valid="true" />                               
+ <check_lwlg lw_limit="4" lg_limit="1" lg_rms_limit="2" valid="true" />  
+ <length_gap gap_limit="600" />                                          
+ <length_short short_limit="300" />                                          
+ <statistical_threshold min_percent="60" min_mean_nprn="4" max_mean_namb="3" valid="true" />  
+</turboedit>
+
+
+ <outputs append="false" verb="1"> 
+   <log> LOGRT.xml.log </log>                               
+   <ambflag> C:\Users\27878\Desktop\GREAT-UPD_1.0\util\PreEdit\PreEdit_sample\2020001\ambflag\$(rec)-DOY-0.-YY-o.ambflag </ambflag>  
+ </outputs>
+ 
+</config>

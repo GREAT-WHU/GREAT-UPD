@@ -1,0 +1,46 @@
+<config> 
+   <gen> 
+      <beg> 2020-01-01 00:00:00 </beg> 
+      <end> 2020-01-01 23:59:30 </end> 
+      <sys> GPS </sys> 
+      <rec>  ABPO  AIRA  ALGO  ALIC  ANMG  AREG
+             ARUC  ASCG  BAKE  BIK0  BOGT  BOR1
+             BRAZ  BREW  BRST  BSHM  CAS1  CCJ2 </rec>
+                   
+      <int> 30 </int> 
+      <sat_rm> G04 </sat_rm> 
+   </gen> 
+   <inputs> 
+      <rinexn> gnss\brdm0010.20p </rinexn> 
+      <ambupd> ambupd\ABPO_ambupd_2020001  ambupd\AIRA_ambupd_2020001  ambupd\ALGO_ambupd_2020001  ambupd\ALIC_ambupd_2020001  ambupd\ANMG_ambupd_2020001  ambupd\AREG_ambupd_2020001 
+               ambupd\ARUC_ambupd_2020001  ambupd\ASCG_ambupd_2020001  ambupd\BAKE_ambupd_2020001  ambupd\BIK0_ambupd_2020001  ambupd\BOGT_ambupd_2020001  ambupd\BOR1_ambupd_2020001 
+               ambupd\BRAZ_ambupd_2020001  ambupd\BREW_ambupd_2020001  ambupd\BRST_ambupd_2020001  ambupd\BSHM_ambupd_2020001  ambupd\CAS1_ambupd_2020001  ambupd\CCJ2_ambupd_2020001 
+      </ambupd> 
+                   
+      <upd> upd_wl_2020001_G </upd> 
+   </inputs> 
+   
+   <process updmode="NL" /> 
+   
+   <gps> 
+      <band> 1 2 5 </band> 
+      <freq> 1 2 3 </freq>
+   </gps> 
+   <glo> 
+      <band> 1 2 </band> 
+      <freq> 1 2 </freq>
+   </glo> 
+   <gal> 
+      <band> 1 5 7 </band>
+      <freq> 1 2 3 </freq>
+   </gal> 
+   <bds> 
+      <band> 2 7 6 </band>
+      <freq> 1 2 3 </freq> 
+   </bds> 
+   
+   <outputs append="false" verb="2"> 
+      <log> LOGRT.log </log> 
+      <upd> upd_nl_2020001_G </upd> 
+   </outputs> 
+</config> 

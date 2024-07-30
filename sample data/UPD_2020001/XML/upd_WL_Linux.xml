@@ -1,0 +1,51 @@
+<config> 
+   <gen> 
+      <beg> 2020-01-01 00:00:00 </beg> 
+      <end> 2020-01-01 23:59:30 </end> 
+      <sys> GPS </sys> 
+      <rec>  ABPO  AIRA  ALGO  ALIC  ANMG  AREG
+             ARUC  ASCG  BAKE  BIK0  BOGT  BOR1
+             BRAZ  BREW  BRST  BSHM  CAS1  CCJ2 </rec>   
+			 
+      <int> 30 </int> 
+      <sat_rm> G04 </sat_rm> 
+   </gen> 
+   <inputs> 
+      <rinexn>  gnss/brdm0010.20p </rinexn> 
+      <rinexo> 
+                obs/abpo0010.20o  obs/aira0010.20o  obs/algo0010.20o  obs/alic0010.20o  obs/anmg0010.20o  obs/areg0010.20o
+                obs/aruc0010.20o  obs/ascg0010.20o  obs/bake0010.20o  obs/bik00010.20o  obs/bogt0010.20o  obs/bor10010.20o
+                obs/braz0010.20o  obs/brew0010.20o  obs/brst0010.20o  obs/bshm0010.20o  obs/cas10010.20o  obs/ccj20010.20o </rinexo> 
+                
+      <ambflag> 
+                 ambflag/abpo0010.20o.ambflag  ambflag/aira0010.20o.ambflag  ambflag/algo0010.20o.ambflag  ambflag/alic0010.20o.ambflag  ambflag/anmg0010.20o.ambflag  ambflag/areg0010.20o.ambflag
+                 ambflag/aruc0010.20o.ambflag  ambflag/ascg0010.20o.ambflag  ambflag/bake0010.20o.ambflag  ambflag/bik00010.20o.ambflag  ambflag/bogt0010.20o.ambflag  ambflag/bor10010.20o.ambflag
+                 ambflag/braz0010.20o.ambflag  ambflag/brew0010.20o.ambflag  ambflag/brst0010.20o.ambflag  ambflag/bshm0010.20o.ambflag  ambflag/cas10010.20o.ambflag  ambflag/ccj20010.20o.ambflag </ambflag> 
+                
+      <biabern>  gnss/P1C12001.DCB gnss/P1P22001.DCB gnss/P2C22001_RINEX.DCB </biabern> 
+   </inputs> 
+   
+   <process updmode="WL" bds_code_bias_corr="true"/> 
+ 
+   <gps> 
+      <band> 1 2 5 </band> 
+      <freq> 1 2 3 </freq>
+   </gps> 
+   <glo> 
+      <band> 1 2 </band> 
+      <freq> 1 2 </freq>
+   </glo> 
+   <gal> 
+      <band> 1 5 7 </band>
+      <freq> 1 2 3 </freq>
+   </gal> 
+   <bds> 
+      <band> 2 7 6 </band>
+      <freq> 1 2 3 </freq> 
+   </bds> 
+   
+   <outputs append="false" verb="2"> 
+      <log> LOGRT.log </log> 
+      <upd> upd_wl_2020001_G </upd> 
+   </outputs> 
+</config> 

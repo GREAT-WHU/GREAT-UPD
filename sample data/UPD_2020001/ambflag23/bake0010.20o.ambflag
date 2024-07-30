@@ -1,0 +1,41 @@
+       GREAT-PreEdit                         05-Aug-2020    SOFTWARE / DATE
+BAKE                                                        STATION
+GPS    L2    L5                                             SYS / FREQ1 / FREQ2
+GAL   E5a   E5b                                             SYS / FREQ1 / FREQ2
+BDS    B2    B3                                             SYS / FREQ1 / FREQ2
+  2020  01  01  00  00  00.00           GPST                BEGIN TIME
+  2020  01  01  23  59  30.00           GPST                END TIME
+     30.00                                                  INTERVAL
+                                                            END OF HEADER
+DEL   G05       1    2880    RN_mixed        
+DEL   G07       1    2880    RN_mixed        
+DEL   G08       1    2880    RN_mixed        
+DEL   G09       1    2880    RN_mixed        
+DEL   G13       1    2880    RN_mixed        
+DEL   G16       1    2880    RN_mixed        
+DEL   G21       1    2880    RN_mixed        
+DEL   G27       1    2880    RN_mixed        
+DEL   G30       1    2880    RN_mixed        
+DEL   G28      14    1940    RN_mixed        
+DEL   G11      48    2165    RN_mixed        
+DEL   G15      78    1869    RN_mixed        
+DEL   G20      81    2022    RN_mixed        
+DEL   G18      93    2224    RN_mixed        
+DEL   G01     166    2303    RN_mixed        
+DEL   G10     174    2154    RN_mixed        
+DEL   G17     218    2226    RN_mixed        
+DEL   G19     319    2284    RN_mixed        
+DEL   G24     337    2112    RN_mixed        
+DEL   G22     406    2526    RN_mixed        
+DEL   G32     475    2371    RN_mixed        
+DEL   G03     478    2605    RN_mixed        
+DEL   G06     503    2561    RN_mixed        
+DEL   G12     523    2322    RN_mixed        
+DEL   G14     569    2493    RN_mixed        
+DEL   G02     629    2638    RN_mixed        
+DEL   G25     690    2471    RN_mixed        
+DEL   G31     794    2637    RN_mixed        
+DEL   G23     799    2871    RN_mixed        
+DEL   G04     800    2854    RN_mixed        
+DEL   G29     876    2700    RN_mixed        
+DEL   G26    1045    2845    RN_mixed        

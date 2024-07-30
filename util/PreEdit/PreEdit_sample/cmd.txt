@@ -1,0 +1,12 @@
+Linux:
+export LD_LIBRARY_PATH=../Linux
+python ../../batch_process/PreEdit.py -c PreEdit_Linux.ini
+python ../../batch_process/PreEdit.py --config=PreEdit_Linux.ini
+
+Macintosh:
+python ../../batch_process/PreEdit.py -c PreEdit_Macintosh.ini
+python ../../batch_process/PreEdit.py --config=PreEdit_Macintosh.ini
+
+Windows:
+python ..\..\batch_process\PreEdit.py -c PreEdit_Windows.ini
+python ..\..\batch_process\PreEdit.py --config=PreEdit_Windows.ini

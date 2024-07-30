@@ -1,0 +1,12 @@
+Linux:
+export LD_LIBRARY_PATH=../../bin/Linux
+python ../../util/batch_process/upd.py -c upd_Linux.ini
+python ../../util/batch_process/upd.py --config=upd_Linux.ini
+
+Macintosh:
+python ../../util/batch_process/upd.py -c upd_Macintosh.ini
+python ../../util/batch_process/upd.py --config=upd_Macintosh.ini
+
+Windows:
+python ..\..\util\batch_process\upd.py -c upd_Windows.ini
+python ..\..\util\batch_process\upd.py --config=upd_Windows.ini

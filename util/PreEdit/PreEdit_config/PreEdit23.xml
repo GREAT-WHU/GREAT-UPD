@@ -1,0 +1,64 @@
+<config>
+<!-- general descriptions -->
+ <gen> 
+   <beg> 2017-07-29 00:00:00 </beg> <!-- beg time -->
+   <end> 2017-07-29 23:59:59 </end> <!-- end time -->
+   <sys> GPS GAL BDS </sys>         <!-- GNSS system: GPS/BDS/GAL -->
+   <rec> GOP7 </rec>                <!-- processing sites -->
+   <int> 30 </int>                  <!-- sampling interval -->
+ </gen> 
+ 
+<!-- input descriptions -->
+ <inputs> 
+   <rinexo> gop72100.17o </rinexo> <!-- obs RINEX decoder --> 
+   <rinexn> brdm2100.17p </rinexn> <!-- nav RINEX decoder --> 
+ </inputs>
+ 
+<!-- GNSS constellation:GPS/BDS/GAL/GLO -->
+<!-- list of GPS satellites and observation bands -->
+<gps> 
+  <sat> 
+    G01  G02  G03  G04  G05  G06  G07  G08  G09  G10  G11  G12  G13  G14
+    G15  G16  G17  G18  G19  G20  G21  G22  G23  G24  G25  G26  G27  G28
+    G29  G30  G31  G32
+  </sat>
+  <band> 2 5 </band>   <!-- 1->L1,2->L2,5->L5 -->
+</gps>
+<!-- list of Galileo satellites and observation bands -->
+<gal> 
+  <sat> 
+    E01  E02  E03  E04  E05  E06  E07  E08  E09  E10  E11  E12  E13  E14
+    E15  E16  E17  E18  E19  E20  E21  E22  E23  E24  E25  E26  E27  E28
+    E29  E30  E31  E32  E33  E34  E35  E36
+  </sat>
+  <band> 5 7 </band>   <!-- 1->E1,5->E5a,7->E5b -->
+</gal>
+<!-- list of BDS satellites and observation bands -->
+<bds> 
+  <sat> 
+    C01  C02  C03  C04  C05  C06  C07  C08  C09  C10  C11  C12  C13  C14
+    C16
+  </sat>
+  <band> 7 6 </band>   <!-- 2->B1,7->B2,6->B3 -->
+</bds>
+
+<!-- minimum elevation -->
+<process  minimum_elev="7"  />  
+
+<!-- turboedit settings -->
+<turboedit>
+ <ephemeris    valid="true"   />                                             <!-- whether use ephemeris, For PC check and elev check should set true -->
+ <check_pc     pc_limit="250"  valid="true" />                               <!-- whether check range residuals, default setting, unit: m -->
+ <check_lwlg   lw_limit="4"  lg_limit="1"  lg_rms_limit="2" valid="true" />  <!-- whether check MW+GF combination, default setting, unit: cycle -->
+ <length_gap   gap_limit="600"   />                                          <!-- ambiguity is inserted if data missing longer, unit:s, default 600s -->
+ <length_short short_limit="300" />                                          <!-- data piece shorter considered as short piece, unit:s, default 1800s -->
+ <statistical_threshold  min_percent="60"  min_mean_nprn="4"  max_mean_namb="3"  valid="true" />  <!-- statistical threshold -->
+</turboedit>
+
+<!-- output descriptions  -->
+ <outputs append="false" verb="1"> 
+   <log> LOGRT.xml.log </log>                               <!-- log encoder -->
+   <ambflag> ambflag/$(rec)-DOY-0.-YY-o.ambflag </ambflag>  <!-- ambflag encoder -->
+ </outputs>
+ 
+</config>
