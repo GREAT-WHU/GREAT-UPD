@@ -182,43 +182,101 @@ GOBS t_gobs::gobs()const
 
 void t_gobs::gobs2to3(GSYS sys)
 {
-	if (_gattr != ATTR_NULL) {
-		return;
-	}
-	GOBS obs2 = this->gobs();
-	switch (sys)
-	{
-	case gnut::GPS:
-		if (obs2 == L1 || obs2 == L2 || obs2 == L5 || obs2 == C1 || obs2 == C2 || obs2 == C5)
-		{
-			_gattr = ATTR_C;
-		}
-		else if (obs2 == D1 || obs2 == D2 || obs2 == D5 || obs2 == S1 || obs2 == S2 || obs2 == S5)
-		{
-			_gattr = ATTR_C;
-		}
-		else if (obs2 == P1 || obs2 == P2 || obs2 == P5) {
-			_gtype = TYPE_C;
-			_gattr = ATTR_P;
-		}
-	case gnut::GAL:
-		break;
-	case gnut::GLO:
-		break;
-	case gnut::BDS:
-		break;
-	case gnut::QZS:
-		break;
-	case gnut::SBS:
-		break;
-	case gnut::IRN:
-		break;
-	case gnut::GNS:
-		break;
-	default:
-		break;
-	}
-	return;
+    if (_gattr != ATTR_NULL)
+    {
+        return;
+    }
+    GOBS obs2 = this->gobs();
+    switch (sys)
+    {
+    case gnut::GPS:
+        if (obs2 == L1 || obs2 == L2 || obs2 == C1 || obs2 == C2 || obs2 == D1 || obs2 == D2 || obs2 == S1 || obs2 == S2)
+        {
+            _gattr = ATTR_C;
+        }
+        else if (obs2 == L5 || obs2 == C5 || obs2 == D5 || obs2 == S5)
+        {
+            _gattr = ATTR_Q;
+        }
+        else if (obs2 == P1 || obs2 == P2 || obs2 == P5)
+        {
+            _gtype = TYPE_C;
+            _gattr = ATTR_W;
+        }
+        break;
+    case gnut::GAL: // modified by glfeng
+        if (obs2 == L1 || obs2 == L6 || obs2 == C1 || obs2 == C6 || obs2 == S1 || obs2 == S6 || obs2 == D1 || obs2 == D6)
+        {
+            _gattr = ATTR_X;
+        }
+        else if (obs2 == L5 || obs2 == L7 || obs2 == L8 || obs2 == C5 || obs2 == C7 || obs2 == C8 || obs2 == D5 || obs2 == D7 || obs2 == D8 || obs2 == S5 || obs2 == S7 || obs2 == S8)
+        {
+            _gattr = ATTR_I;
+        }
+        else if (obs2 == P5)
+        {
+            _gtype = TYPE_C;
+            _gattr = ATTR_Q;
+        }
+        break;
+    case gnut::GLO: // modified by glfeng
+        if (obs2 == L1 || obs2 == L2 || obs2 == C1 || obs2 == C2 || obs2 == D1 || obs2 == D2 || obs2 == S1 || obs2 == S2)
+        {
+            _gattr = ATTR_C;
+        }
+        else if (obs2 == P1 || obs2 == P2)
+        {
+            _gtype = TYPE_C;
+            _gattr = ATTR_P;
+        }
+        break;
+    case gnut::BDS: // added by lijie
+        if (obs2 == L1 || obs2 == L7 || obs2 == C1 || obs2 == C7 || obs2 == S1 || obs2 == S7 || obs2 == D1 || obs2 == D7)
+        {
+            _gattr = ATTR_I;
+        }
+        else if (obs2 == L2 || obs2 == C2 || obs2 == D2 || obs2 == S2)
+        {
+            _gband = BAND_7;
+            _gattr = ATTR_I;
+        }
+        else if (obs2 == P1)
+        {
+            _gtype = TYPE_C;
+            _gattr = ATTR_Q;
+        }
+        else if (obs2 == P2)
+        {
+            _gtype = TYPE_C;
+            _gband = BAND_7;
+            _gattr = ATTR_Q;
+        }
+        else if (obs2 == C5 || obs2 == L5)
+        {
+            _gband = BAND_3;
+            _gattr = ATTR_I;
+        }
+        break;
+    case gnut::QZS: // modified by glfeng
+        if (obs2 == L1 || obs2 == L5 || obs2 == C1 || obs2 == C5)
+        {
+            _gattr = ATTR_C;
+        }
+        else if (obs2 == D1 || obs2 == D5 || obs2 == S1 || obs2 == S5)
+        {
+            _gattr = ATTR_C;
+        }
+        break;
+    case gnut::SBS:
+        break;
+    case gnut::IRN:
+        break;
+    case gnut::GNS:
+        break;
+    default:
+        break;
+    }
+    return;
 }
   
 

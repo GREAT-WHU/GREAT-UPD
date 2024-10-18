@@ -746,8 +746,7 @@ int t_rinexo2::_read_obs(const unsigned int& idx,
   GSYS gsys = obs->gsys();
 
   // filter OBS
-  if( _obs[gsys].size() > 0 &&
-      _obs[gsys].find( trim(gobs2str(type)) ) == _obs[gsys].end() ) return 0;
+  if( _obs[gsys].size() > 0 && _obs[gsys].find( gobs2str(type) ) == _obs[gsys].end() ) return 0;
 
   string valstr = _line.substr(idx,14);                                      // trim not necessary, empty => 0.0
   double valdbl = str2dbl(valstr);    if( double_eq(valdbl, 0.0) ) return 0; // eliminate 0.000
