@@ -788,7 +788,7 @@ namespace great
 					_AMB_RES[site][sat].wl_res = bw - round(bw);
 
 					//compute narrow-lane ambiguties
-					AMB[site][sat].bn = AMB[site][sat].bc / _sys_wavelen[str_idx]["NL"] -
+					AMB[site][sat].bn = -AMB[site][sat].bc / _sys_wavelen[str_idx]["NL"] +
 						_sys_wavelen[str_idx]["WL"] / _sys_wavelen[str_idx]["L2"] * round(bw);
 
 					_sat_site_amb[site][sat] = getFraction(it_sat->second.bn, -0.50);
