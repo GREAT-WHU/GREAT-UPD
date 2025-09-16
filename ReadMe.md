@@ -4,7 +4,7 @@
 
 ---------------------------------------------------------------------------------------------
 
-OVERVIEW
+## OVERVIEW
 
 GREAT-UPD is an open-source software for multi-GNSS (global navigation satellite system) and 
 multi-frequency UPD (uncalibrated phase delay) estimation, which is one of the important 
@@ -15,7 +15,7 @@ program utilizing these libraries. The features of GREAT-UPD are:
 (1) It supports multi-GNSS and multi-frequency UPD estimation for: 
 
     GPS, GLONASS, Galileo, BeiDou
-    
+
 (2) All executable binary APs (application programs) for Windows, Linux, Macintosh are included 
     in the package, as well as the whole source programs of the libraries and AP.
 
@@ -28,7 +28,15 @@ program utilizing these libraries. The features of GREAT-UPD are:
 
 ---------------------------------------------------------------------------------------------
 
-DIRECTORY STRUCTURE OF PACKAGE
+## **Important Information**
+
+- 2025-09-16
+  - In v1.1, the positive and negative signs for NL UPD have been adjusted to maintain consistency with our released iGMAS product. 
+  - 感谢群友（矿大-柯剑峰）和（南信大-刘子豪）指出的问题。
+
+---
+
+## DIRECTORY STRUCTURE OF PACKAGE
 
   GREAT-UPD_<ver>
   ./bin                              the executable binary APs for Windows/Linux/Macintosh *
@@ -49,18 +57,18 @@ DIRECTORY STRUCTURE OF PACKAGE
 
 ---------------------------------------------------------------------------------------------
 
-INSTALLATION AND USAGE
+## INSTALLATION AND USAGE
 
  1. Get CMake via the website (https://cmake.org/download/) and install it. Note that the 
     minimum requirement of CMake version is 3.0.0.
 
  2. Download GREAT-UPD from https://geodesy.noaa.gov/gps-toolbox
- 
+
  3. Extract the program package GREAT-UPD_<ver>.zip or GREAT-UPD_<ver>.tgz to appropriate
     directory <install_dir>. 
 
     > gzip -d GREAT-UPD_<ver>.zip or tar xzf GREAT-UPD_<ver>.tgz (Linux)
-                   
+    
  4. Run the cmake executable or the cmake-gui to configure the project and then build
     it with your chosen build tool. 
     
@@ -90,13 +98,13 @@ INSTALLATION AND USAGE
 
 ---------------------------------------------------------------------------------------------
 
-MANUAL
+## MANUAL
 
   Refer GREAT-UPD_<ver>/doc/GREAT-UPD_<ver>.pdf.
 
 ---------------------------------------------------------------------------------------------
 
-CONTRIBUTOR
+## CONTRIBUTOR
 
    Core developers:
 
@@ -122,13 +130,15 @@ CONTRIBUTOR
 
 ---------------------------------------------------------------------------------------------
 
-HISTORY
+## HISTORY
 
   ver.1.0      2020/08/05 new release
 
+  ver.1.1      2025/09/16 Fix some bugs
+
 ---------------------------------------------------------------------------------------------
 
-COPYRIGHT AND LICENSE
+## COPYRIGHT AND LICENSE
 
           Copyright (C) 2018-2020, Wuhan University. All rights reserved.
 
