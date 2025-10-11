@@ -43,8 +43,18 @@ namespace gnut
 		/** @brief add satellite bias */
 		void   add(const string& ac, const t_gtime& epo, const string& obj, t_spt_bias pt_bias); 
 		/** @brief get single code bias */
-		double get(const t_gtime& epo, const string& obj, const GOBS& gobs1, const GOBS& gobs2);  
+		double get(const t_gtime& epo, const string& obj, const GOBS& gobs1, const GOBS& gobs2, string ac = "");
 		
+		double get(const string prd, const t_gtime& epo, const string& obj, const GOBS& gobs1, const bool meter = true);  // get single bias element
+		vector<string> get_ac();
+		string ac_priority();
+		void   set_used_ac(string ac);
+		string get_used_ac();
+		bool is_osb(); // if observation specific bias
+
+		void overwrite(bool b) { _overwrite = b; } // set/get overwrite mode
+		bool overwrite() { return _overwrite; }
+		void clean_outer(const t_gtime& beg, const t_gtime& end);
 
 	protected:
 		/** @brief get single code bias */
@@ -58,8 +68,14 @@ namespace gnut
 		/** @brief Consolidate all biases with reference signal of pt_cb2 */
 		void       _consolidate(const string& ac, const string& obj, const t_spt_bias pt_cb1, t_spt_bias pt_cb2);
 
+		void	_convert_obstype(const string& ac, const string& obj, GOBS& obstype);
+
 		t_map_ac   _mapbias;           ///< map of all satellite biases (all ACs & all period & all objects)   
+		string     _used_ac;
 		bool       _overwrite;         ///< overwrite or not
+		map<string, int> _ac_order;
+		bool             _isOrdered = false;
+		string           _pri_ac = "DLR_R";
 
 	};
 

@@ -40,11 +40,17 @@ class GNUT_LIBRARY_EXPORT t_biabernese : public t_gcoder {
  protected:
 	 /** @brief decode CODE DCB files. */
    int _decode_data_CODE(char* buff, int sz, int& cnt, vector<string>& errmsg);
+   int _decode_data_sinex(char* buff, int sz, int& cnt, vector<string>& errmsg);  // add by glfeng
+   int _decode_data_sinex_0(char* buff, int sz, int& cnt, vector<string>& errmsg);  // add by jqwu
 
    t_gallbias* _allbias;   ///< store bias
    t_gtime _beg;           ///< valid begin time   
    t_gtime _end;           ///< valid end time
    string  _ac;            ///< analysis center
+
+   double _version; // 1.00 or 0.01
+   bool _is_bias = false; // sinex bias file
+   bool _is_absolute = false; // relative/absolute bias
 };
 
 } // namespace
