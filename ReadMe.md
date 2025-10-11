@@ -34,6 +34,10 @@ program utilizing these libraries. The features of GREAT-UPD are:
   - In v1.1, the positive and negative signs for NL UPD have been adjusted to maintain consistency with our released iGMAS product. 
   - 感谢群友（矿大-柯剑峰）和（南信大-刘子豪）指出的问题。
 
+- 2025-10-11
+  - In v1.2, we added read and write code for DCB products that support CAS. This change will affect the WL UPD estimation.
+  - 感谢群友（武理-徐宇轩）反馈的问题
+
 ---
 
 ## DIRECTORY STRUCTURE OF PACKAGE
@@ -135,6 +139,8 @@ program utilizing these libraries. The features of GREAT-UPD are:
   ver.1.0      2020/08/05 new release
 
   ver.1.1      2025/09/16 Fix some bugs
+
+  ver.1.2      2025/10/11 Add coder for CAS DCB
 
 ---------------------------------------------------------------------------------------------
 
