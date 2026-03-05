@@ -38,6 +38,10 @@ program utilizing these libraries. The features of GREAT-UPD are:
   - In v1.2, we added read and write code for DCB products that support CAS. This change will affect the WL UPD estimation.
   - 感谢群友（武理-徐宇轩）反馈的问题
 
+- 2026-03-05
+  - The related code for utils/PreEdit has been made open source and can be found at this link: https://github.com/GREAT-WHU/Great_TurboEdit_UPDFormat
+  - utils/PreEdit 相关代码已开源在此：https://github.com/GREAT-WHU/Great_TurboEdit_UPDFormat
+
 ---
 
 ## DIRECTORY STRUCTURE OF PACKAGE
